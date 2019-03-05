@@ -3,7 +3,7 @@
 <jsp:include page="top.jsp"/>
 <link rel="stylesheet" href="${css}/home/main.css" />
     <div class="grid-item" id="left">
-    	고객 전용<br /><br />
+    	고객 전용 <br /><br />
     	<a href="#" id="cust_join" >회원가입</a><br />
     	<a href="#" id="cust_login" >로 그 인</a>
     </div>
@@ -23,16 +23,16 @@
 <jsp:include page="bottom.jsp"/>  
 <script src="${js}/oop.js"></script>
 <script>
-$('#emp_register').click(()=>{
+$('#emp_register').click(function(){
 	location.assign('employee.do?cmd=move&page=register');
 });
-$('#emp_access').click(()=>{
+$('#emp_access').click(function(){
 	location.assign('employee.do?cmd=move&page=access');
 });
-$('#cust_join').click(()=>{
+$('#cust_join').click(function(){
 	location.assign('customer.do?cmd=move&page=signup');
 });
-$('#cust_login').click(()=>{
+$('#cust_login').click(function(){
 	location.assign('customer.do?cmd=move&page=signin');
 });
 $('#oop_access').click(function(){

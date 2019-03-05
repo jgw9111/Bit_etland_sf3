@@ -19,4 +19,7 @@
 
 <body>
 <div id="wrapper" class="grid-container container-fluid" > <!-- 일반 css(grid-container) / 부트스트랩 (container-fluid)--> 
-	<div class="grid-item" id="header">BIT-RETAIL</div>
+	<div class="grid-item" id="header">
+	BIT-RETAIL ${time}
+	</div>
+	
