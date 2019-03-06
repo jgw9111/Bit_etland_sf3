@@ -2,9 +2,12 @@ package com.bit_trade.web.mapper;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.bit_trade.web.domain.ProductDTO;
 import com.bit_trade.web.proxy.Proxy;
 
+@Component
 public interface ProductMapper {
 	public void insertProduct(ProductDTO pro);
 	public List<ProductDTO> selectproductsList(Proxy pxy);

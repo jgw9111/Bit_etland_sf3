@@ -2,9 +2,11 @@ package com.bit_trade.web.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.bit_trade.web.domain.CategoryDTO;
 import com.bit_trade.web.proxy.Proxy;
-
+@Component
 public interface CategoryService {
 	public void joinCategory(CategoryDTO cate);
     public List<CategoryDTO> bringCategoryLists(Proxy pxy);

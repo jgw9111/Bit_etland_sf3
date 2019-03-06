@@ -2,8 +2,10 @@ package com.bit_trade.web.service;
 
 import java.util.List;
 
-import com.bit_trade.web.domain.ShipperDTO;
+import org.springframework.stereotype.Component;
 
+import com.bit_trade.web.domain.ShipperDTO;
+@Component
 public interface ShipperService {
 	public void registShipper(ShipperDTO shi);
 	public List<ShipperDTO> bringShippersList();

@@ -2,8 +2,10 @@ package com.bit_trade.web.mapper;
 
 import java.util.List;
 
-import com.bit_trade.web.domain.EmployeeDTO;
+import org.springframework.stereotype.Component;
 
+import com.bit_trade.web.domain.EmployeeDTO;
+@Component
 public interface EmployeeMapper {
 	
 	public void insertEmployee(EmployeeDTO emp);

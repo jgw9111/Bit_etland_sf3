@@ -1,7 +1,9 @@
 package com.bit_trade.web.domain;
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
-@Data
+@Data @Component
 public class CustomerDTO {
 	private String startRow,endRow,rnum,
 				   customerID, 

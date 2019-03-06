@@ -2,9 +2,11 @@ package com.bit_trade.web.mapper;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.bit_trade.web.domain.ImageDTO;
 import com.bit_trade.web.proxy.Proxy;
-
+@Component
 public interface ImageMapper {
 	public void insertImage(ImageDTO img);
 	public List<ImageDTO> selectimageList(Proxy pxy);

@@ -3,9 +3,11 @@ package com.bit_trade.web.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import com.bit_trade.web.domain.CustomerDTO;
 import com.bit_trade.web.proxy.Proxy;
-
+@Component
 public interface CustomerService {
 	public void joinCustomer(CustomerDTO cus);
 	public List<CustomerDTO> bringCustomersList(Proxy pxy);

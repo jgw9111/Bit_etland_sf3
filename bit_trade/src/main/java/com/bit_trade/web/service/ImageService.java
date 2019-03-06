@@ -2,9 +2,11 @@ package com.bit_trade.web.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.bit_trade.web.domain.ImageDTO;
 import com.bit_trade.web.proxy.Proxy;
-
+@Component
 public interface ImageService {
 	public void addImage(ImageDTO img);
 	public List<ImageDTO> imageList(Proxy pxy);

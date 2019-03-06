@@ -2,9 +2,11 @@ package com.bit_trade.web.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.bit_trade.web.domain.ProductDTO;
 import com.bit_trade.web.proxy.Proxy;
-
+@Component
 public interface ProductService {
 	public void addProduct(ProductDTO pro);
 	public List<ProductDTO> productsList(Proxy pxy);
