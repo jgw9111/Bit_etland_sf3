@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<jsp:include page="../home/top.jsp"/>
 <link rel="stylesheet" href="${css}/employee/access.css" />
 <div class="grid-item" id="side_menu">
 	<h1><font style="font-size: 30px">SIGN-IN</font></h1>
@@ -26,15 +25,13 @@
 	    <input type="hidden" name="cmd" value="signin" />
 	    <input type="hidden" name="page" value="main" />
 	    <input type="hidden" name="dir" value="category" />
-	</div>
 </form>
-<jsp:include page="../home/bottom.jsp"/>
+</div>
 <script>
-$('#confirm_btn').click(()=>{
-	var customerID = $('#customerID').val();
-	var password = $('#password').val();
+$('#confirm_btn').click(function(){
 	$('#form')
-	.attr('action', '${ctx}/customer.do')
+	.attr('method','POST')
+	.attr('action', '${ctx}/customer/signin')
 	.submit();
 });
 </script>

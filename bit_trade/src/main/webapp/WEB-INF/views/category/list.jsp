@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
-<jsp:include page="../home/top.jsp"/>
 <link rel="stylesheet" href="${css}/customer/list.css" />
-<div class="grid-item" id="nav">
+<%-- <div class="grid-item" id="nav">
 	<jsp:include page="../employee/nav.jsp"/>
-</div>
+</div> --%>
 <div class="grid-item" id="side_menu">
 	<div class="container" style="width: 200px;">
 	  <ul class="list-group" id="cate_tab">
@@ -54,6 +53,4 @@
 	  </div>
 	</div> --%>
 </div>
-
-<jsp:include page="../home/bottom.jsp"/>
 <script src="${js}/employee.js"></script>
