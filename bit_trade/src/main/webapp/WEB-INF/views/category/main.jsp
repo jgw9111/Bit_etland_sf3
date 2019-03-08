@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:include page="../home/top.jsp"/>
 <link rel="stylesheet" href="${css}/category/nav.css" />    
 <div class="grid-item" id="nav">
 	<ul id="navi_bar">
@@ -44,7 +43,6 @@
       </div>
     </div>
   </div>
-<jsp:include page="../home/bottom.jsp"/>  
 <script>
 /* $('#emp_register').click(function(){
 	location.assign('employee.do?cmd=move&page=register');

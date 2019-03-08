@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../home/top.jsp"/>
 <link rel="stylesheet" href="${css}/customer/mypage.css" />
 <div class="grid-item" id="nav">
 	<jsp:include page="../employee/nav.jsp"/>
@@ -62,18 +61,15 @@
 </div>
 </div>
 </form>
-
-
-<jsp:include page="../home/bottom.jsp"/>    
 <script>
-$('#confirm_btn').attr('style','cursor:pointer').click(()=>{
+$('#confirm_btn').attr('style','cursor:pointer').click(function(){
 	alert('확인');
 	var form = $('#update_form');
 	form.attr('action','${ctx}/customer.do');
 	form.attr('method','post');
 	form.submit();
 });
-$('#cancel_btn').click(()=>{
+$('#cancel_btn').click(function(){
 	alert('취소버튼클릭');
 	location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customerID=${cust.customerID}')
 });

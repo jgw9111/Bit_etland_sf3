@@ -12,7 +12,7 @@
 </ul>
 <script>
 $('#category').attr('style','cursor:pointer')
-	.click(()=>{
+	.click(function(){
 	location.assign('${ctx}/category.do?cmd=cate_list&page=list');
 });
 </script>

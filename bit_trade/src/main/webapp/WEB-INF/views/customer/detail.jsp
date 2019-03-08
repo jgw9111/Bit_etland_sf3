@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../home/top.jsp"/>
 <link rel="stylesheet" href="${css}/customer/detail.css" />
 <div class="grid-item" id="nav">
 	<jsp:include page="../employee/nav.jsp"/>
@@ -83,19 +82,18 @@
 </div>
 </div>
 </div>
-<jsp:include page="../home/bottom.jsp"/>    
 <script>
-$('#update_btn').attr('style','cursor:pointer').click(()=>{
+$('#update_btn').attr('style','cursor:pointer').click(function(){
 	location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customerID=${cust.customerID}');
 });
-$('#file_upload_btn').attr('style','cursor:pointer').click(()=>{
+$('#file_upload_btn').attr('style','cursor:pointer').click(function(){
 	$('#file_form')
 	.attr('method','post')
 	.attr('action','${ctx}/customer.do?cmd=cust_file_upload&page=detail&customerID=${cust.customerID}')
 	.attr('enctype','multipart/form-data') 
 	.submit(); 
 });
-$('#withdrawal').attr('style','cursor:pointer').click(()=>{
+$('#withdrawal').attr('style','cursor:pointer').click(function(){
 	alert('탈퇴');
 	location.assign('${ctx}/customer.do?cmd=cust_delete&dir=home&page=main&customerID=${cust.customerID}');
 });
