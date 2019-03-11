@@ -1,5 +1,6 @@
 package com.bit_trade.web.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.bit_trade.web.domain.CustomerDTO;
+import com.bit_trade.web.proxy.ContextProxy;
 import com.bit_trade.web.service.CustomerService;
 
 @SessionAttributes({"cust"})
@@ -22,11 +24,12 @@ public class CustomerController {
 	@Autowired CustomerDTO customer;
 	@Autowired CustomerService customerService;
 	@Autowired HttpSession session;
+	@Autowired ContextProxy pxy;
 	
 	@RequestMapping(value="/signin",method=RequestMethod.POST)
 	public String signin(@ModelAttribute CustomerDTO param,HttpSession session ) {
 		logger.info("\n --------- customerController {} !! ----------","signin");
-		System.out.println("로그인 전 결과 : "+customer.toString());
+		System.out.println("로그인 전 결과 : "+customer);
 
 		customer = customerService.retrieveCustomer(param);
 		System.out.println("로그인 후 결과 : "+customer);
@@ -40,11 +43,13 @@ public class CustomerController {
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public String update(@ModelAttribute CustomerDTO param) {
 		logger.info("\n --------- customerController {} !! ----------","update");
-		System.out.println("=========1???===========");
+		System.out.println("수정 전 : "+ session.getAttribute("cust"));
 		customerService.modifyCustomer(param);
-		System.out.println("=========2???===========");
-		customer = (CustomerDTO) session.getAttribute("customer");
-		customer = param;
+		session.invalidate(); // 기존에 담아둔거 정리
+		pxy.setContext();
+		session.setAttribute("cust", customerService.retrieveCustomer(param));
+		System.out.println("수정 후 결과 : "+session.getAttribute("cust"));
+		
 		return "public:customer/detail.tiles";
 		
 	}

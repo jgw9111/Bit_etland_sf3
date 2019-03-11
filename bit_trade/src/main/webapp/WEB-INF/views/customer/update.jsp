@@ -40,16 +40,15 @@
 	</div>
 	<div >				   
 	<br />
-	${cust.customerID} <br />
-	${cust.customerName} <br />
-	${cust.ssn} <br />
+	<input type="text" name="customerID" value="${cust.customerID}" readonly/>  <br />
+	<input type="text" name="customerName" value="${cust.customerName}" readonly/>  <br />
+	<input type="text" name="ssn" value="${cust.ssn}" readonly/>  <br />
 	여 <br />
-	<input type="text" name="phone" placeholder="${cust.phone}" /> <br />
-<%-- 	<input type="hidden" id="_phone" placeholder="${cust.phone}" /> <br /> --%>
-	<input type="text" name="city" placeholder="${cust.city}" /> <br />
-	<input type="text" name="address" placeholder="${cust.address}" /> <br />
-	<input type="text" name="postalCode" placeholder="${cust.postalCode}" /> <br />
-	<input type="text" name="password" placeholder="임시 비밀번호" /> <br />
+	<input type="text" name="phone" value="${cust.phone}" /> <br />
+	<input type="text" name="city" value="${cust.city}" /> <br />
+	<input type="text" name="address" value="${cust.address}" /> <br />
+	<input type="text" name="postalCode" value="${cust.postalCode}" /> <br />
+	<input type="text" name="password" value="임시 비밀번호" /> <br />
 	</div>
 </div>
 <div class="grid-item">
@@ -62,7 +61,7 @@
 $('#confirm_btn').attr('style','cursor:pointer').click(function(){
 	$('#update_form')
 	.attr('method','POST')
-	.attr('action','${ctx}/move/customer/detail')
+	.attr('action','${ctx}/customer/update')
 	.submit();
 });
 $('#cancel_btn').click(function(){
