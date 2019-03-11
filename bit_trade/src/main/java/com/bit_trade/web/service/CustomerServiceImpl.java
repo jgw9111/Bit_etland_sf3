@@ -3,13 +3,16 @@ package com.bit_trade.web.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bit_trade.web.domain.CustomerDTO;
+import com.bit_trade.web.mapper.CustomerMapper;
 import com.bit_trade.web.proxy.Proxy;
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
-
+	@Autowired CustomerMapper customerMapper;
 	@Override
 	public void joinCustomer(CustomerDTO cus) {
 		// TODO Auto-generated method stub
@@ -24,14 +27,13 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public List<CustomerDTO> retrieveCustomers(Proxy pxy) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public CustomerDTO retrieveCustomer(CustomerDTO cus) {
-		// TODO Auto-generated method stub
-		return null;
+		return customerMapper.selectCustomer(cus);
 	}
 
 	@Override
