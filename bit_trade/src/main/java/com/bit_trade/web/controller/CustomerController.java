@@ -54,9 +54,9 @@ public class CustomerController {
 		logger.info("\n --------- customerController {} !! ----------","update");
 		System.out.println("수정 전 : "+ session.addAttribute("cust"));
 		customerService.modifyCustomer(param);
-		customer = customerService.retrieveCustomer(param);
-		session.addAttribute("cust",customer);
+		session.addAttribute("cust",customer = customerService.retrieveCustomer(param));
 		red.addAttribute("customerID",param.getCustomerID());
+		System.out.println("param id : "+param.getCustomerID());
 		System.out.println("수정 후 결과 : "+session.addAttribute("cust"));
 		
 		return "redirect:/customer/detail"; //내장 
