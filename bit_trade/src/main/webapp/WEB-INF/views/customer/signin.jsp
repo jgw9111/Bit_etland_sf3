@@ -28,7 +28,7 @@
 </form>
 </div>
 <script>
-$('#confirm_btn').click(function(){
+$('#confirm_btn').attr('style','cursor:pointer').click(function(){
 	$('#form')
 	.attr('method','POST')
 	.attr('action', '${ctx}/customer/signin')

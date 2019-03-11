@@ -19,20 +19,33 @@ import com.bit_trade.web.service.CustomerService;
 @RequestMapping("/customer")
 public class CustomerController {
 	static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
-	@Autowired CustomerDTO cus;
+	@Autowired CustomerDTO customer;
 	@Autowired CustomerService customerService;
+	@Autowired HttpSession session;
 	
 	@RequestMapping(value="/signin",method=RequestMethod.POST)
-	public String signin(@ModelAttribute CustomerDTO customer,HttpSession session ) {
+	public String signin(@ModelAttribute CustomerDTO param,HttpSession session ) {
 		logger.info("\n --------- customerController {} !! ----------","signin");
 		System.out.println("로그인 전 결과 : "+customer.toString());
 
-		cus = customerService.retrieveCustomer(customer);
-		System.out.println("로그인 후 결과 : "+cus);
-		session.setAttribute("cust", cus);
-		return (cus != null) ? 
+		customer = customerService.retrieveCustomer(param);
+		System.out.println("로그인 후 결과 : "+customer);
+		session.setAttribute("cust", customer);
+		if(customer != null) session.setAttribute("cust", customer);
+		return (customer != null) ? 
 				"public:customer/detail.tiles"
 					:
-				"public:category/main.tiles";
+				"public:home/main.tiles";
+	}
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public String update(@ModelAttribute CustomerDTO param) {
+		logger.info("\n --------- customerController {} !! ----------","update");
+		System.out.println("=========1???===========");
+		customerService.modifyCustomer(param);
+		System.out.println("=========2???===========");
+		customer = (CustomerDTO) session.getAttribute("customer");
+		customer = param;
+		return "public:customer/detail.tiles";
+		
 	}
 }

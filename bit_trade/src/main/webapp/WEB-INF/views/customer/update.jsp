@@ -50,9 +50,6 @@
 	<input type="text" name="address" placeholder="${cust.address}" /> <br />
 	<input type="text" name="postalCode" placeholder="${cust.postalCode}" /> <br />
 	<input type="text" name="password" placeholder="임시 비밀번호" /> <br />
-	<input type="hidden" name="customerID" value="${cust.customerID}" />
-	<input type="hidden" name="cmd" value="cust_update" />
-	<input type="hidden" name="page" value="detail" />
 	</div>
 </div>
 <div class="grid-item">
@@ -63,14 +60,12 @@
 </form>
 <script>
 $('#confirm_btn').attr('style','cursor:pointer').click(function(){
-	alert('확인');
-	var form = $('#update_form');
-	form.attr('action','${ctx}/customer.do');
-	form.attr('method','post');
-	form.submit();
+	$('#update_form')
+	.attr('method','POST')
+	.attr('action','${ctx}/move/customer/detail')
+	.submit();
 });
 $('#cancel_btn').click(function(){
-	alert('취소버튼클릭');
 	location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customerID=${cust.customerID}')
 });
 

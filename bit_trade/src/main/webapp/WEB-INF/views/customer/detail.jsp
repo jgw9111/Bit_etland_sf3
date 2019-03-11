@@ -81,10 +81,15 @@
 	<span class="label label-danger" id="withdrawal">회원 탈퇴</span>
 </div>
 </div>
-</div>
+
 <script>
 $('#update_btn').attr('style','cursor:pointer').click(function(){
-	location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customerID=${cust.customerID}');
+	location.assign('${ctx}/move/customer/update');
+	/* $('#update_btn')
+	.attr('method','POST')
+	.attr('action','${ctx}/move/customer/update')
+	.submit(); */
+	/* location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customerID=${cust.customerID}'); */
 });
 $('#file_upload_btn').attr('style','cursor:pointer').click(function(){
 	$('#file_form')

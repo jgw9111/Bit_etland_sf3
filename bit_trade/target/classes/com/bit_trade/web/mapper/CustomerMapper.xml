@@ -9,6 +9,7 @@
 	        	CUSTOMER_NAME customerName,
 	        	PASSWORD,
 	        	SSN,
+	        	PHOTO,
 	        	PHOEN_NUMBER phone,
 	        	CITY,
 	        	ADDRESS,
@@ -30,6 +31,7 @@
 		        	SSN,
 		        	PHOEN_NUMBER,
 		        	CITY,
+		        	PHOTO,
 		        	ADDRESS,
 		        	POSTAL_CODE)
 		        VALUES (#{customerID}, 
@@ -38,6 +40,7 @@
 		            #{ssn}, 
 		            #{phone},
 		            #{city},
+		            #{photo},
 		            #{address},
 		            #{postalCode}
 		        )
