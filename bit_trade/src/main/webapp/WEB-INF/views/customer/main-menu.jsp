@@ -2,7 +2,7 @@
 <!--
 	@Author : 정지우 [jgw911191@gmail.com]
 	@Date : 2019. 3. 12. 오전 11:04:38
-	@File Name : *.jsp
+	@File Name : main-menu.jsp
 	@Desc :
  -->
 <header>

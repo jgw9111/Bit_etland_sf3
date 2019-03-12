@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="main-menu.jsp"/>
+<%-- <jsp:include page="main-menu.jsp"/> --%>
 <div class="grid-item" id="side_bar">
 	<div class= "myphoto">
 	<div class= "myphotoin">
@@ -17,7 +17,6 @@
 </div>
 <div class="grid-item" id= "content">
 <div id="mypage_table">
-  <h2>검색한 사람의 정보</h2>  
   <table class="table table-bordered">
     <thead>
       <tr>

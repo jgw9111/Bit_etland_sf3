@@ -2,7 +2,7 @@
 <!--
 	@Author : 정지우 [jgw911191@gmail.com]
 	@Date : 2019. 3. 12. 오후 12:04:39
-	@File Name : *.jsp
+	@File Name : main-content.jsp
 	@Desc :
  -->
  
@@ -56,11 +56,11 @@
       <div class="row">
         <div class="wow bounceInRight animated animated" style="visibility: visible;">
           <div class="col-lg-6">
-            <h4>Maecenas luctus</h4>
-            <p>Lorem ipsum dolor sit amet, mutat graeco volumus ad eam, singulis patrioque comprehensam nam no. Mei cu dicat voluptaria volumus.</p>
-            <a href="#" class="thumbnail">
+            <h4>개인정보</h4>
+			<jsp:include page="detail.jsp"/>
+         <%--    <a href="#" class="thumbnail">
 							<img src="${img}/thumbnails/outline-1.jpg" alt="">
-						</a>
+						</a> --%>
           </div>
         </div>
         <div class="wow bounceInLeft animated animated" style="visibility: visible;">

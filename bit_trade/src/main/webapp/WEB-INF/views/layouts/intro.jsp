@@ -8,15 +8,15 @@
  -->
 <jsp:include page="common.jsp"/>
 <body>
-	<div class="grid-item" id="header">
+<%-- 	<div class="grid-item" id="header">
 	          <tiles:insertAttribute name="top" />
-	</div>
+	</div> --%>
 	<div>
 	          <tiles:insertAttribute name="nav" />
 	          <tiles:insertAttribute name="content" />
 	</div>	
-	<div class="grid-item" id="footer"> 
+<%-- 	<div class="grid-item" id="footer"> 
 	          <tiles:insertAttribute name="bottom" />
-</div>         
+</div>   --%>       
 </body>
 </html>
