@@ -60,6 +60,6 @@ public class CustomerController {
 		System.out.println("수정 후 결과 : "+session.addAttribute("cust"));
 		
 		return "redirect:/customer/detail"; //내장 
-		
 	}
+
 }

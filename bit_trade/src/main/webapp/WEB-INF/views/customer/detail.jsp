@@ -1,10 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="${css}/customer/detail.css" />
-<div class="grid-item" id="nav">
-	<jsp:include page="../employee/nav.jsp"/>
-</div>
+<jsp:include page="main-menu.jsp"/>
 <div class="grid-item" id="side_bar">
 	<div class= "myphoto">
 	<div class= "myphotoin">
@@ -59,23 +55,6 @@
     </thead>	
   </table>
 </div>
-
-<%-- <div class="grid-item" id ="mypage">
-	<div class="grid-item" id ="mypage1">
-		검색한 사람의 정보 <br />
-		I   D : ${cust.customerID} <br />
-		이	름 : ${cust.customerName}<br />
-		생년월일 : ${cust.ssn}<br />
-		성	별 : 여 <br />
-		전화번호 : ${cust.phone}<br />
-		지번주소 : ${cust.city}<br />
-		상세주소 : ${cust.address}<br />
-		우편번호 : ${cust.postalCode} <br />
-	</div> --%>
-	<!-- <div class="input-group">
-		  <span class="input-group-addon" id="basic-addon1">PASSWORD</span>
-		  <input type="text" class="form-control" placeholder="PASSWORD" aria-describedby="basic-addon1" id="password" name="password">
-    </div> -->
 <div class="grid-item">
 	<span class="label label-info" id="update_btn">수정</span>
 	<span class="label label-danger" id="withdrawal">회원 탈퇴</span>
