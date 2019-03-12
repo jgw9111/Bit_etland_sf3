@@ -105,7 +105,7 @@
       <div class="row">
         <div class="wow bounceInRight">
           <div class="col-lg-6">
-            <h4>CustomerDetail</h4>
+            <h4>Customer Detail</h4>
             <p>Lorem ipsum dolor sit amet, mutat graeco volumus ad eam, singulis patrioque comprehensam nam no. Mei cu dicat voluptaria volumus.</p>
             <a href="#" class="thumbnail">
 							<jsp:include page="../customer/detail.jsp"/>
