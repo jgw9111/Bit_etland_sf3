@@ -1,13 +1,13 @@
 var $$ = $$ ||{};
 $$ = {
 		div : x=>{
-			return '<div id='+x.id+' class='+x.clazz+'></div>';
+			return $('<div id='+x.id+'/>');
 		}, 
 		a : x=>{
-			return '<a href="#" id='+x.id+'>'+ x.val+'</a>';
+			return $('<a href="'+x.url+'" id='+x.id+'/>');
 			
 		},
 		li:x=>{
-			return '<li href="#" id='+x.id+ ' class='+x.clazz+'></li>';
+			return $('<li id='+x.id+'/>');
 		}
 }
