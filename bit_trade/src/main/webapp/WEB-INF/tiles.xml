@@ -29,6 +29,7 @@
   <definition name="employee:*/*.tiles" extends="employee">
     <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
   </definition>
+
   <definition name="no_tiles" template="/WEB-INF/views/layouts/no_template.jsp">
     <put-attribute name="no_template" value="" />
   </definition>

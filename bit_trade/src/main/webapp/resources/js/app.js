@@ -8,7 +8,18 @@ app.path =(()=>{
 	var onCreate =()=>{
 		setContentView();
 	};
-	var setContentView =()=>{};
+	var setContentView =()=>{
+		$('#header').empty().text('헤더'); // 오버로딩
+		$('#menu').empty().text('메뉴');
+		$('#main').empty().text('메인');
+		$('#right').empty().text('사이드');
+		$('#footer').empty().text('푸터');
+		$('#header').html('<h1>헤더</h1>'); //오버라이딩
+		$('#menu').html('<h1>메뉴</h1>');
+		$('#main').html('<h1>메인</h1>');
+		$('#right').html('<h1>사이드</h1>');
+		$('#footer').html('<h1>푸터</h1>');
+	};
 	return {init:init};
 })();
 app.session =(()=>{
