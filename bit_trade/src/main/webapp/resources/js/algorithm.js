@@ -19,6 +19,20 @@ algo = (()=>{
 			/*$('#nav').append().eq(4).html($$.a({id:'Application',text:'Application'}));*/
 			$('#quest1').text('수열 1 - 1+2+3+4+…+100까지의 합계 (do~while)');
 			$('#quest2').text('수열 2 - 1-2+3-4+5-6+…+99-100의 합계 (do~while, while, if)');
+			$('#ans_btn_1').text('Result').addClass('cursor').click(()=>{
+				$.ajax({
+					url:$.ctx()+'/algo/seq/1',
+					type:'get',
+					data:{},
+					datatype:'json',
+					success:d=>{
+						alert('넘어온 문제번호 ::'+d.result);
+					},
+					error:e=>{
+						alert('error!!!!');
+					}
+				});
+			});
 		});
 	};
 	return {init:init,onCreate:onCreate};
