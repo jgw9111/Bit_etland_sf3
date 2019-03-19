@@ -9,13 +9,17 @@ public class AlgoServiceImpl implements AlgoService {
 
 	@Override
 	public String arithmeticSequence(Map<?,?> param) {
-		String start = (String) param.get("start"), 
-				end = (String) param.get("end"),
+		String startNum = (String) param.get("startNum"), 
+				endNum = (String) param.get("endNum"),
 				diff = (String) param.get("diff"),
 				result="";
-		int A = Integer.parseInt(start);
-		int E = Integer.parseInt(end);
+		System.out.println("-----result1):::::"+result);
+		int A = Integer.parseInt(startNum);
+		System.out.println("-----startNum ->):::::"+A);
+		int E = Integer.parseInt(endNum);
+		System.out.println("-----endNum ->):::::"+E);
 		int D = Integer.parseInt(diff);
+		System.out.println("-----diff ->):::::"+D);
 		int sum = A;
 		int N = 2;
 		int AN = 0;

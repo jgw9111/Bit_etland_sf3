@@ -22,16 +22,17 @@ public class AlgoController {
 	static final Logger logger = LoggerFactory.getLogger(AlgoController.class);
 	@Autowired AlgoService algoService;
 	@RequestMapping(value="/seq/{queNum}",method=RequestMethod.POST)
-	@ResponseBody //request,response
-	public Map<String,Object> sequnce(@PathVariable String queNum,@RequestBody Map<String,Object> param){ // RequestBody -> 무조건 post 방식
+	@ResponseBody  //request,response
+	public Map<String,Object> sequnce(@PathVariable String queNum,@RequestBody  Map<String,Object> param){ // RequestBody -> 무조건 post 방식
 		logger.info("\n --------- AlgoController {} !! ----------","sequnce()");
 		System.out.println("넘어온 문제 번호 :: "+queNum);
+
 		Map<String,Object> map = new HashMap<String,Object>();
 		String start = (String) param.get("start");
 		String end = (String) param.get("end");
 		String diff = (String) param.get("diff");
-		map.put("start",start);
-		map.put("end",end);
+		map.put("startNum",start);
+		map.put("endNum",end);
 		map.put("diff",diff);
 		String result = algoService.arithmeticSequence(map);
 		map.put("result",result);

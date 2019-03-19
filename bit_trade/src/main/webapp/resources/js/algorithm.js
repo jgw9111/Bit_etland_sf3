@@ -33,7 +33,7 @@ algo = (()=>{
 					data:JSON.stringify(
 							{start: $('#start').val(),
 							end: $('#end').val(),
-							diff:$('#diff').val}),
+							diff:$('#diff').val()}),
 					datatype:'json',
 					contentType:"application/json; charset=utf-8", // application(자바)/json
 					success:d=>{
@@ -43,10 +43,10 @@ algo = (()=>{
 						alert('error!!!!');
 					}
 				});
+			}); 
 			$('#reset_btn_1').text('Reset').addClass('cursor').click(()=>{
 				inputForm();				
-				});
-			}); 
+			});
 		});
 	};
 	let inputForm = ()=>{
