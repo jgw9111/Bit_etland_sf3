@@ -7,5 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public interface AlgoService {
 	public String arithmeticSequence(Map<?,?>param);
+	public String geometicSequence(Map<?,?>param);
 
 }
