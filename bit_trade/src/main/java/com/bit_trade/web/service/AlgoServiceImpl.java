@@ -13,13 +13,9 @@ public class AlgoServiceImpl implements AlgoService {
 				endNum = (String) param.get("endNum"),
 				diff = (String) param.get("diff"),
 				result="";
-		System.out.println("-----result1):::::"+result);
 		int A = Integer.parseInt(startNum);
-		System.out.println("-----startNum ->):::::"+A);
 		int E = Integer.parseInt(endNum);
-		System.out.println("-----endNum ->):::::"+E);
 		int D = Integer.parseInt(diff);
-		System.out.println("-----diff ->):::::"+D);
 		int sum = A;
 		int N = 2;
 		int AN = 0;
@@ -31,14 +27,17 @@ public class AlgoServiceImpl implements AlgoService {
 		}
 
 		result = sum+"";
-		System.out.println("-----result:::::"+result);
 		return result;
 	}
 
 	@Override
 	public String geometicSequence(Map<?, ?> param) {
-		String result="";
-		
+		String ratio = (String) param.get("ratio"),
+				startNum = (String) param.get("startNum"),
+				endNum = (String) param.get("endNum"),
+				result="";
+		int A = Integer.parseInt(startNum);
+		int R = Integer.parseInt(ratio);
 		return result;
 	}
 
