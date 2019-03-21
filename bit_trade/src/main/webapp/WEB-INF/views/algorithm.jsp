@@ -9,13 +9,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>알고리즘</title>
+  <title>Jiwoo's A L G O R I T H M</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="${js}/algorithm.js"></script>
+  <script src="${js}/algorithm/algorithm.js"></script>
   <link rel="stylesheet" href="${css}/util.css" />
   <style>
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
@@ -71,7 +71,7 @@
       <hr>
       <h2 id="quest1">I Love Food</h2>
       <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
-      <h5><span id="ans_btn_1" class="label label-danger">Food</span> <span id="reset_btn_1" class="label label-primary">Ipsum</span></h5><br>
+      <h5 class="buttons"><span id="ans_btn_1" class="label label-danger">Food</span> <span id="reset_btn_1" class="label label-primary">Ipsum</span></h5><br>
       <p id="result">Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <br><br>
       
