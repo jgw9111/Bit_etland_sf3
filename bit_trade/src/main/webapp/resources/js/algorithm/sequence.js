@@ -9,10 +9,10 @@ function sequence(){
 		$('#new_div').remove();
 		$('#right_end').remove();
 		let arr = [
-			{id:'a',val:'등차수열의 합계'},
-			{id:'b',val:'등비수열의 합계'},
-			{id:'c',val:'팩토리얼의 합계'},
-			{id:'d',val:'피보나치의 합계'}
+			{id:'ari',val:'등차수열의 합계'},
+			{id:'geo',val:'등비수열의 합계'},
+			{id:'fac',val:'팩토리얼의 합계'},
+			{id:'fibo',val:'피보나치의 합계'}
 			];
 		$.each(arr,(i,j)=>{
 			/*$('#right_start').append(str);*/
@@ -61,6 +61,7 @@ function sequence(){
 
 var _sequence = {
 		inputForm : ()=>{
+			let html = '<form>';
 			$('#result').html($$.input({type:'text',id:'start',name:'start',place:'초항'}));
 			$('#result').append($$.input({type:'text',id:'end',name:'end',place:'마지막 항'}));
 			$('#result').append($$.input({type:'text',id:'diff',name:'diff',place:'공차'}));
