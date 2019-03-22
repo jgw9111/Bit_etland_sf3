@@ -9,9 +9,11 @@ algo = (()=>{
 	let setContentView = ()=>{
 		$.when(
 				$.getScript($.js()+'/component/compo.js'),
-				$.getScript($.js()+'/algorithm/sequence.js')
+				$.getScript($.js()+'/algorithm/sequence.js'),
+				$.getScript($.js()+'/algorithm/math.js')
 		).done(()=>{
 			sequence();
+			$('#math').click(()=>{math();});
 		}
 		);
 };

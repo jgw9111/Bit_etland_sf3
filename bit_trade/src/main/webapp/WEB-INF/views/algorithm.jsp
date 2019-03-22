@@ -67,6 +67,7 @@
     </div>
 
     <div id="right_content" class="col-sm-9">
+    
       <h4><small>RECENT POSTS</small></h4> 
       <hr>
       <h2 id="quest1">I Love Food</h2>

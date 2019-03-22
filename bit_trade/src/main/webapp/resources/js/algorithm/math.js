@@ -1,4 +1,4 @@
-function sequence(){
+function math(){
 	$$.nav();
 	_sequence.remove();
 	$('#right_content').prepend($$.div({id:'right_start'})); //재활용

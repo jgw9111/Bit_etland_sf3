@@ -5,7 +5,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AlgoServiceImpl implements AlgoService {
+public class SequenceServiceImpl implements SequenceService {
 
 	@Override
 	public String arithmeticSequence(Map<?,?> param) {
@@ -32,13 +32,41 @@ public class AlgoServiceImpl implements AlgoService {
 
 	@Override
 	public String geometicSequence(Map<?, ?> param) {
-		String ratio = (String) param.get("ratio"),
+		String ratio = (String) param.get("diff"),
 				startNum = (String) param.get("startNum"),
-				endNum = (String) param.get("endNum"),
-				result="";
+				endNum = (String) param.get("endNum");
 		int A = Integer.parseInt(startNum);
 		int R = Integer.parseInt(ratio);
-		return result;
+		int E = Integer.parseInt(endNum);
+		int S = A;
+		int N = 2;
+		while(true) {
+			A = A*R;
+			S += A;
+			N++;
+			if(N>E) {
+				break;
+			}
+		}
+		return S+"";
+	}
+
+	@Override
+	public String factorialSequence(Map<?, ?> param) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String fibonacciSequence(Map<?, ?> param) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String switchSequence(Map<?, ?> param) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

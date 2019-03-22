@@ -14,27 +14,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bit_trade.web.service.AlgoService;
+import com.bit_trade.web.service.SequenceService;
 
 @Controller
 @RequestMapping("/algo")
 public class AlgoController {
 	static final Logger logger = LoggerFactory.getLogger(AlgoController.class);
-	@Autowired AlgoService algoService;
-	@RequestMapping(value="/seq/{queNum}",method=RequestMethod.POST)
+	@Autowired SequenceService seqService;
+	@Autowired Map<String,Object> map;
+	@RequestMapping(value="/seq/{kind}",method=RequestMethod.POST)
 	@ResponseBody  //request,response
-	public Map<String,Object> sequnce(@PathVariable String queNum,@RequestBody  Map<String,Object> param){ // RequestBody -> 무조건 post 방식
+	public Map<String,Object> sequnce(@PathVariable String kind,@RequestBody  Map<String,Object> param){ // RequestBody -> 무조건 post 방식
 		logger.info("\n --------- AlgoController {} !! ----------","sequnce()");
-		System.out.println("넘어온 문제 번호 :: "+queNum);
 
-		Map<String,Object> map = new HashMap<String,Object>();
+		map = new HashMap<String,Object>();
 		String start = (String) param.get("start");
 		String end = (String) param.get("end");
 		String diff = (String) param.get("diff");
+		System.out.println("시작값"+start);
+		System.out.println("마지막"+end);
+		System.out.println("공차공비등등"+diff);
 		map.put("startNum",start);
 		map.put("endNum",end);
 		map.put("diff",diff);
-		String result = algoService.arithmeticSequence(map);
+		String result = "";
+		switch(kind) {
+		case "ari": 
+			result = seqService.arithmeticSequence(map);
+			break;
+		case "geo":
+			result = seqService.geometicSequence(map);
+			break;
+		case "fac": 
+			result = seqService.factorialSequence(map);
+			break;
+		case "fibo": 
+			result = seqService.fibonacciSequence(map);
+			break;
+		case "switch": 
+			result = seqService.switchSequence(map);
+			break;
+		};
 		map.put("result",result);
 		return map;
 	}
