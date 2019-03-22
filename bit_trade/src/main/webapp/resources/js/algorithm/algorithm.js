@@ -10,9 +10,11 @@ algo = (()=>{
 		$.when(
 				$.getScript($.js()+'/component/compo.js'),
 				$.getScript($.js()+'/algorithm/sequence.js'),
-				$.getScript($.js()+'/algorithm/math.js')
+				$.getScript($.js()+'/algorithm/math.js'),
+				$.getScript($.js()+'/component/common.js')
 		).done(()=>{
 			sequence();
+			common.nav();
 			$('#math').click(()=>{math();});
 		}
 		);

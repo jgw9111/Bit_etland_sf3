@@ -1,5 +1,5 @@
 function sequence(){
-	$$.nav();
+	/*$$.nav();*/
 	_sequence.remove();
 	$('#right_content').prepend($$.div({id:'right_start'})); //재활용
 	$('#leava_a_comment').before('<div id="right_end"/>'); //일회용
@@ -100,14 +100,6 @@ function sequence(){
 		});
 }
 	
-	
-	/*$('#result').html($$.input({type:'text',id:'start',name:'start',place:'초항'}));
-	$('#result').append($$.input({type:'text',id:'end',name:'end',place:'마지막 항'}));
-	$('#result').append($$.input({type:'text',id:'diff',name:'diff',place:'공차'}));
-	$('.rmove').remove();*/
-
- //콜백
-
 
 var _sequence = {
 		inputForm : (x)=>{
@@ -119,19 +111,9 @@ var _sequence = {
 			});
 			html += '</form>';
 			return html;
-			/*$('#result').html($$.input({type:'text',id:'start',name:'start',place:'초항'}));
-			$('#result').append($$.input({type:'text',id:'end',name:'end',place:'마지막 항'}));
-			$('#result').append($$.input({type:'text',id:'diff',name:'diff',place:'공차'}));*/
+
 		},
-	/*	question : (x)=>{
-			$('#quest1').text(x);
-			_sequence.inputForm();*/
-		/*	$('#reset_btn_1').text('Reset').addClass('cursor').click(()=>{
-				_sequence.inputForm();				
-			});*/
-			//콜백엔드
-		//},
-		
+
 		remove :()=>{
 			$('#rm_start').before('<div id="del_start"/>');
 			$('#rm_end').after('<div id="del_end"/>');

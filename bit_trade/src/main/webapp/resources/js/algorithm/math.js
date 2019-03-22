@@ -1,19 +1,20 @@
 function math(){
-	$$.nav();
-	_sequence.remove();
+	$('#right_start').remove();
+
 	$('#right_content').prepend($$.div({id:'right_start'})); //재활용
 	$('#leava_a_comment').before('<div id="right_end"/>'); //일회용
 	$('#right_start').nextUntil('#right_end').wrapAll('<div id="new_div"></div>');
-
+	
 	let str = $('#new_div').html();
+	
+	alert(str);
+	
 	$('#new_div').remove();
 	$('#right_end').remove();	
 	let arr = [
-		{id:'ari',val:'등차수열의 합계'},
-		{id:'geo',val:'등비수열의 합계'},
-		{id:'fac',val:'팩토리얼의 합계'},
-		{id:'fibo',val:'피보나치의 합계'},
-		{id:'switch',val:'교행수열의 합계'}
+		{id:'count',val:'01. Count 알고리즘'},
+		{id:'maxMin',val:'02. 최댓값과 최솟값'},
+		{id:'sumAvg',val:'03. 합계와 평균'}
 		];
 	$.each(arr,(i,j)=>{
 		let GID = Math.floor(Math.random()*10000)+1;
@@ -39,25 +40,17 @@ function math(){
 		$(_INPUT).empty();
 		let x = [];
 		switch(j.id){
-		case 'ari' : 
+		case 'count' : 
 			x = [{cls:'start', txt:'초항'},
 				{cls:'end', txt:'한계값'},
 				{cls:'diff', txt:'공차'}];
 		break;
-		case 'geo' : 
+		case 'maxMin' : 
 			x = [{cls:'start', txt:'초항'},
 				{cls:'end', txt:'한계값'},
 				{cls:'diff', txt:'공비'}];
 			break;
-		case 'fac' : 
-			x = [{cls:'start', txt:'초항'},
-				{cls:'end', txt:'한계값'}];
-		break;
-		case 'fibo' : 
-			x = [{cls:'start', txt:'초항'},
-				{cls:'end', txt:'한계값'}];
-			break;
-		case 'switch' : 
+		case 'sumAvg' : 
 			x = [{cls:'start', txt:'초항'},
 				{cls:'end', txt:'한계값'}];
 		break;
@@ -75,7 +68,7 @@ function math(){
 					diff : $(_INPUT+' input.diff').val()
 			};
 			$.ajax({
-				url:$.ctx()+'/algo/seq/'+that,
+				url:$.ctx()+'/algo/math/'+that,
 				type:'post',
 				data:JSON.stringify(data),
 				datatype:'json',
